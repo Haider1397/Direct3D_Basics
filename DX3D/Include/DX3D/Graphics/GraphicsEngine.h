@@ -1,5 +1,6 @@
 #pragma once
 
+#include <DX3D/Core/Common.h>
 #include <DX3D/Core/Core.h>
 #include <DX3D/Core/Base.h>
 
@@ -10,7 +11,7 @@ namespace dx3d
 	{
 
 	public:
-		GraphicsEngine();
+		explicit GraphicsEngine(const GraphicsEngineDesc& desc);
 		virtual ~GraphicsEngine() override;
 
 	private:

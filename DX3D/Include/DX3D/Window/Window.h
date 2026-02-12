@@ -1,12 +1,15 @@
 #pragma once
+
+#include <DX3D/Core/Common.h>
 #include <DX3D/Core/Base.h>
+
 namespace dx3d
 {
 
 	class Window : public Base
 	{
 	public:
-		Window();
+		explicit Window(const WindowDesc& desc);
 		virtual ~Window() override;
 
 	private:

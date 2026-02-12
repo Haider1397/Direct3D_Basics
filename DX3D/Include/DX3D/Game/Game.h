@@ -9,13 +9,13 @@ namespace dx3d
 	{
 	public:
 
-		Game();
+		explicit Game(const GameDesc& desc);
 		virtual ~Game() override;
 
 		virtual void run() final;
 
 	private:
-
+		std::unique_ptr<Logger> m_loggerPtr{};
 		std::unique_ptr<GraphicsEngine> m_graphicEngine{};
 		std::unique_ptr<Window> m_Display{};
 		bool m_isRunning{ true };

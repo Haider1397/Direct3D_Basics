@@ -1,7 +1,6 @@
 #include <DX3D/Graphics/RenderSystem.h>
 
-
-dx3d::RenderSystem::RenderSystem()
+dx3d::RenderSystem::RenderSystem(const RenderSystemDesc& desc) : Base(desc.Base)
 {
 	D3D_FEATURE_LEVEL featureLevel{};
 	UINT createDeviceFlags{};
@@ -15,9 +14,11 @@ dx3d::RenderSystem::RenderSystem()
 
 	if (FAILED(hr))
 	{
+		getLogger().log(Logger::LogLevel::Error, "D3D11 initalization failed.");
 		throw   std::runtime_error("D3D11 initalization failed.");
 	}
 }
+
 
 dx3d::RenderSystem::~RenderSystem()
 {

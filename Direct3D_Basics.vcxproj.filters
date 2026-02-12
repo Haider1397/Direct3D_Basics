@@ -33,10 +33,10 @@
     <ClCompile Include="DX3D\Source\DX3D\Graphics\RenderSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DX3D\Source\DX3D\Window\Win32\Win32Window.cpp">
+    <ClCompile Include="DX3D\Source\DX3D\Window\Win32Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DX3D\Source\DX3D\Window\Win32Window.cpp">
+    <ClCompile Include="DX3D\Source\DX3D\Core\Logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -60,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DX3D\Source\DX3D\Graphics\RenderSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Core\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Core\Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
