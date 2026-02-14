@@ -11,18 +11,18 @@
 namespace dx3d 
 {
 
-	class RenderSystem final : public Base
+	class RenderSystem final : public Base, public std::enable_shared_from_this<RenderSystem>
 	{
 
 	public:
 		explicit RenderSystem(const RenderSystemDesc& desc);
 		virtual ~RenderSystem() override;
 
-		SwapChainPtr createSwapChain(const SwapChainDesc& Desc);
+		SwapChainPtr createSwapChain(const SwapChainDesc& Desc) const;
 
 	private:
 
-		GraphicsEngineDesc GetGraphicsResourcesDesc();
+		GraphicsResourceDesc GetGraphicsResourcesDesc() const noexcept;
 
 	private:
 		Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice{};

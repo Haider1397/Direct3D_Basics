@@ -13,6 +13,7 @@ namespace dx3d
 	struct WindowDesc
 	{
 		BaseDesc Base;
+		Rect size{};
 	};
 	struct GraphicsEngineDesc
 	{
@@ -22,6 +23,11 @@ namespace dx3d
 	{
 		BaseDesc Base;
 	};
+	struct DisplayDesc
+	{
+		WindowDesc Window;
+		RenderSystem& renderSystem;
+	};
 	struct SwapChainDesc
 	{
 		void* winHandle{};
@@ -29,6 +35,7 @@ namespace dx3d
 	};
 	struct GameDesc
 	{
+		Rect windowSize{ 1280,720 };
 		Logger::LogLevel logLevel = Logger::LogLevel::Error;
 	};
 

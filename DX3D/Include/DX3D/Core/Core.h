@@ -8,6 +8,7 @@ namespace dx3d
 	class Window;
 	class Game;
 	class Logger;
+	class Display;
 
 	class GraphicsEngine;
 	class RenderSystem;

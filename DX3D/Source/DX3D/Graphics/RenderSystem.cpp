@@ -24,7 +24,10 @@ dx3d::RenderSystem::RenderSystem(const RenderSystemDesc& desc) : Base(desc.Base)
 	 DX3DGraphicLogUtilsErrorAndThrow(m_dxgiDevice->GetParent(IID_PPV_ARGS(&m_dxgiAdapter)),
 		 "GetParent failed to retrive IDXGIAdapter.");
 	 
-	 DX3DGraphicLogUtilsErrorAndThrow(m_dxgiDevice->GetParent(IID_PPV_ARGS(&m_dxgiFactory)),
+
+
+
+	 DX3DGraphicLogUtilsErrorAndThrow(m_dxgiAdapter->GetParent(IID_PPV_ARGS(&m_dxgiFactory)),
 		 "GetParent failed to retrive IDXGIFactory.");
 }
 
@@ -33,12 +36,13 @@ dx3d::RenderSystem::~RenderSystem()
 {
 }
 
-SwapChainPtr dx3d::RenderSystem::createSwapChain(const SwapChainDesc& Desc)
+SwapChainPtr dx3d::RenderSystem::createSwapChain(const SwapChainDesc& Desc) const
 {
-	return std::make_shared<SwapChain>(desc,);
+	return std::make_shared<SwapChain>(Desc,GetGraphicsResourcesDesc());
 }
 
-GraphicsEngineDesc dx3d::RenderSystem::GetGraphicsResourcesDesc()
+GraphicsResourceDesc dx3d::RenderSystem::GetGraphicsResourcesDesc() const noexcept
 {
-	return { {m_logger} ,*m_d3dDevice.Get() , *m_dxgiAdapter.Get()};
+	return { {m_logger}, shared_from_this() ,*m_dxgiDevice.Get() , *m_dxgiFactory.Get()};
 }
+
