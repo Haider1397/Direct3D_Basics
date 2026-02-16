@@ -33,14 +33,14 @@ dx3d::GraphicsDevice::~GraphicsDevice()
 {
 }
 
-SwapChainPtr dx3d::GraphicsDevice::createSwapChain(const SwapChainDesc& Desc) const
+SwapChainPtr dx3d::GraphicsDevice::createSwapChain(const SwapChainDesc& Desc)
 {
-	return std::make_shared<SwapChain>(Desc,GetGraphicsResourceDesc());
+	return std::make_shared<SwapChain>(Desc,getGraphicsResourceDesc());
 }
 
 DeviceContextPtr dx3d::GraphicsDevice::createDeviceContext()
 {
-	return std::make_shared<DeviceContext>(GetGraphicsResourceDesc());
+	return std::make_shared<DeviceContext>(getGraphicsResourceDesc());
 }
 
 void dx3d::GraphicsDevice::executeCommandList(DeviceContext& context)
@@ -51,7 +51,7 @@ void dx3d::GraphicsDevice::executeCommandList(DeviceContext& context)
 	m_d3dContext->ExecuteCommandList(list.Get(),false);
 }
 
-GraphicsResourceDesc dx3d::GraphicsDevice::GetGraphicsResourceDesc() const noexcept
+GraphicsResourceDesc dx3d::GraphicsDevice::getGraphicsResourceDesc() const noexcept
 {
 	return { {m_logger}, shared_from_this() , *m_d3dDevice.Get(), *m_dxgiFactory.Get()};
 }
