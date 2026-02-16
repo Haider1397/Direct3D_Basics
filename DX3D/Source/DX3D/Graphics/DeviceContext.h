@@ -9,10 +9,10 @@ namespace dx3d
 	public:
 		explicit DeviceContext(const GraphicsResourceDesc& gDesc);
 
-		void clearAndSetBackBuffer(SwapChain& swapChain, const Vec4& color);
+		void clearAndSetBackBuffer(const SwapChain& swapChain, const Vec4& color);
 
 	private:
-		Microsoft::WRL::ComPtr<ID3D11DeviceContext> m_context;
+		Microsoft::WRL::ComPtr<ID3D11DeviceContext> m_context{};
 
 		friend class GraphicsDevice;
 

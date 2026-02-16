@@ -33,8 +33,9 @@ namespace dx3d {
 	protected:
 
 		std::shared_ptr<const GraphicsDevice> m_graphicsDevice;
-		IDXGIFactory& m_factory;
+
 		ID3D11Device& m_device;
-		
+		IDXGIFactory& m_factory;
+	
 	};
 }
