@@ -1,7 +1,7 @@
 #pragma once
 
 #include <DX3D/Core/Common.h>
-#include<DX3D/Graphics/GraphicsResources.h>
+#include<DX3D/Graphics/GraphicsResource.h>
 #include <DX3D/Core/Core.h>
 #include <DX3D/Core/Base.h>
 #include <d3d11.h>
@@ -19,10 +19,14 @@ namespace dx3d
 		virtual ~GraphicsDevice() override;
 
 		SwapChainPtr createSwapChain(const SwapChainDesc& Desc) const;
+		DeviceContextPtr createDeviceContext();
+
+		void executeCommandList(DeviceContext& Context);
 
 	private:
 
-		GraphicsResourceDesc GetGraphicsResourcesDesc() const noexcept;
+		GraphicsResourceDesc GetGraphicsResourceDesc() const noexcept;
+
 
 	private:
 		Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice{};

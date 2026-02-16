@@ -32,3 +32,7 @@ void dx3d::Logger::log(LogLevel level, const char* message) const
 	std::clog << "[DX3D " << logLevelToString(level) << "]" << message <<"\n";
 
 }
+
+dx3d::Logger::~Logger()
+{
+}

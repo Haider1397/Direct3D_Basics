@@ -26,7 +26,7 @@ namespace dx3d
 	struct DisplayDesc
 	{
 		WindowDesc Window;
-		GraphicsDevice& GraphicsDevice;
+		GraphicsDevice& graphicsDevice;
 	};
 	struct SwapChainDesc
 	{

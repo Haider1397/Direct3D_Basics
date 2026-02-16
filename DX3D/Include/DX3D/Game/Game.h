@@ -14,6 +14,7 @@ namespace dx3d
 
 		virtual void run() final;
 
+		void onInternaUpdate();
 	private:
 		std::unique_ptr<Logger> m_loggerPtr{};
 		std::unique_ptr<GraphicsEngine> m_graphicEngine{};

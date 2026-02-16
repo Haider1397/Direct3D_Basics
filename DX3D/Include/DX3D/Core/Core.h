@@ -9,6 +9,7 @@ namespace dx3d
 	class Game;
 	class Logger;
 	class Display;
+	class DeviceContext;
 
 	class GraphicsEngine;
 	class GraphicsDevice;
@@ -16,11 +17,12 @@ namespace dx3d
 
 	using i32 = int;
 	using ui32 = unsigned int;
-	using f64 = float;
+	using f32 = float;
 	using d64 = double;
 
 
 
 	using SwapChainPtr = std::shared_ptr<SwapChain>;
+	using DeviceContextPtr = std::shared_ptr<DeviceContext>;
 
 }

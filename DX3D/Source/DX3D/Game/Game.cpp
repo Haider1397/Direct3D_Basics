@@ -18,6 +18,12 @@ dx3d::Game::Game(const GameDesc& desc):
 
 dx3d::Game::~Game()
 {
-	DX3DLogInfo("Game Deallocation started.");
+	DX3DLogInfo("Game is Shutting Down.");
 }
+
+void dx3d::Game::onInternaUpdate()
+{
+	m_graphicEngine->render(m_Display->getSwapChain());
+}
+
 

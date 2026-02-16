@@ -45,6 +45,9 @@
     <ClCompile Include="DX3D\Source\DX3D\Game\Display.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\DeviceContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX3D\Include\DX3D\Core\Base.h">
@@ -80,13 +83,19 @@
     <ClInclude Include="DX3D\Source\DX3D\Graphics\SwapChain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DX3D\Source\DX3D\Graphics\GraphicsResources.h">
+    <ClInclude Include="DX3D\Source\DX3D\Graphics\GraphicsResource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DX3D\Include\DX3D\Math\Rect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DX3D\Include\DX3D\Game\Display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Source\DX3D\Graphics\DeviceContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\Vec4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

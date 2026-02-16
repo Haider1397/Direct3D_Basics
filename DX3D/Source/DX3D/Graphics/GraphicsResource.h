@@ -11,8 +11,8 @@ namespace dx3d {
 	struct GraphicsResourceDesc
 	{
 		BaseDesc Base;
-		std::shared_ptr<const GraphicsDevice> GraphicsDevice;
-		IDXGIDevice& device;
+		std::shared_ptr<const GraphicsDevice> graphicsDevice;
+		ID3D11Device& device;
 		IDXGIFactory& factory;
 		
 	
@@ -23,17 +23,18 @@ namespace dx3d {
 	public:
 		explicit GraphicsResource(const GraphicsResourceDesc& Desc):
 			Base(Desc.Base),
-			m_GraphicsDevice(Desc.GraphicsDevice),
+			m_graphicsDevice(Desc.graphicsDevice),
 			m_device(Desc.device),
 			m_factory(Desc.factory)
 		{
-
+		
 		}
 
 	protected:
 
-		std::shared_ptr<const GraphicsDevice> m_GraphicsDevice;
+		std::shared_ptr<const GraphicsDevice> m_graphicsDevice;
 		IDXGIFactory& m_factory;
-		IDXGIDevice& m_device;
+		ID3D11Device& m_device;
+		
 	};
 }

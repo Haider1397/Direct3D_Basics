@@ -4,5 +4,10 @@
 dx3d::Display::Display(const DisplayDesc& desc):
 	Window(desc.Window)
 {
-	m_swapChain = desc.GraphicsDevice.createSwapChain({m_handle,m_size});
+	m_swapChain = desc.graphicsDevice.createSwapChain({m_handle,m_size});
+}
+
+dx3d::SwapChain& dx3d::Display::getSwapChain() const noexcept
+{
+	return *m_swapChain;
 }
