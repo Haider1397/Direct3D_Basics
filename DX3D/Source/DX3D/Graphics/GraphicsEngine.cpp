@@ -1,5 +1,5 @@
 #include <DX3D/Graphics/GraphicsEngine.h>
-#include<DX3D/Graphics/RenderSystem.h>
+#include<DX3D/Graphics/GraphicsDevice.h>
 
 using namespace dx3d;
 
@@ -10,7 +10,7 @@ dx3d::GraphicsEngine::GraphicsEngine(const GraphicsEngineDesc& desc): Base(desc.
 
 
 
-	m_renderSystem = std::make_shared<RenderSystem>(RenderSystemDesc{m_logger});
+	m_GraphicsDevice = std::make_shared<GraphicsDevice>(GraphicsDeviceDesc{m_logger});
 }
 
 
@@ -19,7 +19,7 @@ dx3d::GraphicsEngine::~GraphicsEngine()
 {
 }
 
-RenderSystem& dx3d::GraphicsEngine::GetRenderSystem() const noexcept
+GraphicsDevice& dx3d::GraphicsEngine::GetGraphicsDevice() const noexcept
 {
-	return *m_renderSystem;
+	return *m_GraphicsDevice;
 }

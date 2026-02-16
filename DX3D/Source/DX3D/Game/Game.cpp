@@ -10,7 +10,7 @@ dx3d::Game::Game(const GameDesc& desc):
 	
 {
 	m_graphicEngine = std::make_unique<GraphicsEngine>(GraphicsEngineDesc{m_logger});
-	m_Display = std::make_unique<Display>(DisplayDesc{ {m_logger,desc.windowSize} , m_graphicEngine->GetRenderSystem()});
+	m_Display = std::make_unique<Display>(DisplayDesc{ {m_logger,desc.windowSize} , m_graphicEngine->GetGraphicsDevice()});
 	
 	DX3DLogInfo("Game Initalized.");
 }

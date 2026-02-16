@@ -1,10 +1,10 @@
-#include <DX3D/Graphics/RenderSystem.h>
+#include <DX3D/Graphics/GraphicsDevice.h>
 #include <DX3D/Graphics/GraphicsLogUtils.h>
 #include<DX3D/Graphics/SwapChain.h>
 
 using namespace dx3d;
 
-dx3d::RenderSystem::RenderSystem(const RenderSystemDesc& desc) : Base(desc.Base)
+dx3d::GraphicsDevice::GraphicsDevice(const GraphicsDeviceDesc& desc) : Base(desc.Base)
 {
 	D3D_FEATURE_LEVEL featureLevel{};
 	UINT createDeviceFlags{};
@@ -32,16 +32,16 @@ dx3d::RenderSystem::RenderSystem(const RenderSystemDesc& desc) : Base(desc.Base)
 }
 
 
-dx3d::RenderSystem::~RenderSystem()
+dx3d::GraphicsDevice::~GraphicsDevice()
 {
 }
 
-SwapChainPtr dx3d::RenderSystem::createSwapChain(const SwapChainDesc& Desc) const
+SwapChainPtr dx3d::GraphicsDevice::createSwapChain(const SwapChainDesc& Desc) const
 {
 	return std::make_shared<SwapChain>(Desc,GetGraphicsResourcesDesc());
 }
 
-GraphicsResourceDesc dx3d::RenderSystem::GetGraphicsResourcesDesc() const noexcept
+GraphicsResourceDesc dx3d::GraphicsDevice::GetGraphicsResourcesDesc() const noexcept
 {
 	return { {m_logger}, shared_from_this() ,*m_dxgiDevice.Get() , *m_dxgiFactory.Get()};
 }

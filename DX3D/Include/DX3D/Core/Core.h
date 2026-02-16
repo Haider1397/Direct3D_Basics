@@ -11,7 +11,7 @@ namespace dx3d
 	class Display;
 
 	class GraphicsEngine;
-	class RenderSystem;
+	class GraphicsDevice;
 	class SwapChain;
 
 	using i32 = int;
