@@ -2,6 +2,8 @@
 #include <DX3D/Graphics/GraphicsLogUtils.h>
 #include<DX3D/Graphics/SwapChain.h>
 #include<DX3D/Graphics/DeviceContext.h>
+#include<DX3D/Graphics/ShaderBinary.h>
+#include<DX3D/Graphics/GraphicsPipelineStates.h>>
 
 using namespace dx3d;
 
@@ -41,6 +43,16 @@ SwapChainPtr dx3d::GraphicsDevice::createSwapChain(const SwapChainDesc& Desc)
 DeviceContextPtr dx3d::GraphicsDevice::createDeviceContext()
 {
 	return std::make_shared<DeviceContext>(getGraphicsResourceDesc());
+}
+
+ShaderBinaryPtr dx3d::GraphicsDevice::CompileShader(const ShaderCompileDesc& desc)
+{
+	return std::make_shared<ShaderBinary>(desc , getGraphicsResourceDesc());
+}
+
+GraphicsPipelineStatesPtr dx3d::GraphicsDevice::createGraphicsPipelineStates(const GraphicsPipelineStatesDesc& desc)
+{
+	return std::make_shared<GraphicsPipelineStates>(desc , getGraphicsResourceDesc());
 }
 
 void dx3d::GraphicsDevice::executeCommandList(DeviceContext& context)

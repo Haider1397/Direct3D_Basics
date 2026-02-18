@@ -33,6 +33,30 @@ namespace dx3d
 		void* winHandle{};
 		Rect winSize{};
 	};
+
+	enum  class ShaderType{
+		VertexShader = 0,
+		PixelShader
+	};
+	struct ShaderCompileDesc 
+	{
+		const char* shaderSourceName{};
+		const void* shaderSourceCode{};
+		size_t shaderSourceCodeSize{};
+		const char* shaderEntryPoint{};
+		ShaderType shaderType{};
+	};
+	struct ShaderBinaryData
+	{
+		const void* data{};
+		size_t dataSize{};
+	};
+	struct GraphicsPipelineStatesDesc
+	{
+		const ShaderBinary& vs;
+		const ShaderBinary& ps;
+
+	};
 	struct GameDesc
 	{
 		Rect windowSize{ 1280,720 };

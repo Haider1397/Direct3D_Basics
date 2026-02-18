@@ -14,9 +14,9 @@ namespace dx3d {
 		std::shared_ptr<const GraphicsDevice> graphicsDevice;
 		ID3D11Device& device;
 		IDXGIFactory& factory;
-		
-	
 	};
+
+
 
 	class GraphicsResource: public Base 
 	{

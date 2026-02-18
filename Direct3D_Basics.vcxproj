@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -113,7 +113,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,6 +128,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -142,6 +143,8 @@
     <ClCompile Include="DX3D\Source\DX3D\Graphics\GraphicsDevice.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Core\Logger.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Graphics\SwapChain.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\ShaderBinary.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\GraphicsPipelineStates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX3D\Include\DX3D\Math\Vec4.h" />
@@ -159,7 +162,10 @@
     <ClInclude Include="DX3D\Source\DX3D\Graphics\GraphicsResource.h" />
     <ClInclude Include="DX3D\Source\DX3D\Graphics\GraphicsDevice.h" />
     <ClInclude Include="DX3D\Include\DX3D\Core\Logger.h" />
+    <ClInclude Include="DX3D\Source\DX3D\Graphics\GraphicsUtils.h" />
     <ClInclude Include="DX3D\Source\DX3D\Graphics\SwapChain.h" />
+    <ClInclude Include="DX3D\Source\DX3D\Graphics\ShaderBinary.h" />
+    <ClInclude Include="DX3D\Source\DX3D\Graphics\GraphicsPipelineStates.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

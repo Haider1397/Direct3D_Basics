@@ -10,10 +10,11 @@ namespace dx3d
 	class Logger;
 	class Display;
 	class DeviceContext;
-
+	class ShaderBinary;
 	class GraphicsEngine;
 	class GraphicsDevice;
 	class SwapChain;
+	class GraphicsPipelineStates;
 
 	using i32 = int;
 	using ui32 = unsigned int;
@@ -24,5 +25,6 @@ namespace dx3d
 
 	using SwapChainPtr = std::shared_ptr<SwapChain>;
 	using DeviceContextPtr = std::shared_ptr<DeviceContext>;
-
+	using ShaderBinaryPtr = std::shared_ptr<ShaderBinary>;
+	using GraphicsPipelineStatesPtr = std::shared_ptr<GraphicsPipelineStates>;
 }
