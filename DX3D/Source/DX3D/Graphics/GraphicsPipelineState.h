@@ -22,15 +22,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
-#include <DX3D/Game/Display.h>
-#include <DX3D/Graphics/GraphicsDevice.h>
+#pragma once
+#include <DX3D/Graphics/GraphicsResource.h>
 
-dx3d::Display::Display(const DisplayDesc& desc): Window(desc.window)
+namespace dx3d
 {
-	m_swapChain = desc.graphicsDevice.createSwapChain({ m_handle, m_size });
+	class GraphicsPipelineState final: public GraphicsResource
+	{
+	public:
+		GraphicsPipelineState(const GraphicsPipelineStateDesc& desc, const GraphicsResourceDesc& gDesc);
+	private:
+		Microsoft::WRL::ComPtr<ID3D11VertexShader> m_vs{};
+		Microsoft::WRL::ComPtr<ID3D11PixelShader> m_ps{};
+		Microsoft::WRL::ComPtr<ID3D11InputLayout> m_layout{};
+		friend class DeviceContext;
+	};
 }
 
-dx3d::SwapChain& dx3d::Display::getSwapChain() noexcept
-{
-	return *m_swapChain;
-}
