@@ -56,7 +56,7 @@ dx3d::GraphicsEngine::~GraphicsEngine()
 {
 }
 
-GraphicsDevice& dx3d::GraphicsEngine::GetGraphicsDevice() const noexcept
+GraphicsDevice& dx3d::GraphicsEngine::GetGraphicsDevice() noexcept
 {
 	return *m_graphicsDevice;
 }
