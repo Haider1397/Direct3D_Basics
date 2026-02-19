@@ -9,7 +9,7 @@ namespace dx3d
 	public:
 		explicit GraphicsEngine(const GraphicsEngineDesc& desc);
 		virtual ~GraphicsEngine() override;
-		GraphicsDevice& getGraphicsDevice() noexcept;
+		GraphicsDevice& GetGraphicsDevice() noexcept;
 
 		void render(SwapChain& swapChain);
 	private:
