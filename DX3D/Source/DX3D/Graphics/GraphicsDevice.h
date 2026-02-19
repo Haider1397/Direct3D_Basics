@@ -7,7 +7,7 @@
 
 namespace dx3d
 {
-	class GraphicsDevice final : public Base, public std::enable_shared_from_this<GraphicsDevice>
+	class GraphicsDevice final: public Base, public std::enable_shared_from_this<GraphicsDevice>
 	{
 	public:
 		explicit GraphicsDevice(const GraphicsDeviceDesc& desc);
@@ -15,8 +15,8 @@ namespace dx3d
 
 		SwapChainPtr createSwapChain(const SwapChainDesc& desc);
 		DeviceContextPtr createDeviceContext();
-		ShaderBinaryPtr CompileShader(const ShaderCompileDesc& desc);
-		GraphicsPipelineStatesPtr createGraphicsPipelineStates(const GraphicsPipelineStatesDesc& desc);
+		ShaderBinaryPtr compileShader(const ShaderCompileDesc& desc);
+		GraphicsPipelineStatePtr createGraphicsPipelineState(const GraphicsPipelineStateDesc& desc);
 		VertexBufferPtr createVertexBuffer(const VertexBufferDesc& desc);
 
 		void executeCommandList(DeviceContext& context);
@@ -30,3 +30,4 @@ namespace dx3d
 		Microsoft::WRL::ComPtr<IDXGIFactory> m_dxgiFactory{};
 	};
 }
+

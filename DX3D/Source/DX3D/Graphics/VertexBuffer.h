@@ -1,13 +1,12 @@
 #pragma once
-#include<DX3D/Graphics/GraphicsResource.h>
+#include <DX3D/Graphics/GraphicsResource.h>
 
 namespace dx3d
 {
-
-	class VertexBuffer final : public GraphicsResource
+	class VertexBuffer final: public GraphicsResource
 	{
 	public:
-		VertexBuffer( const VertexBufferDesc& desc, const GraphicsResourceDesc& gDesc);
+		VertexBuffer(const VertexBufferDesc& desc, const GraphicsResourceDesc& gDesc);
 		ui32 getVertexListSize() const noexcept;
 	private:
 		Microsoft::WRL::ComPtr<ID3D11Buffer> m_buffer{};
@@ -16,5 +15,5 @@ namespace dx3d
 
 		friend class DeviceContext;
 	};
-
 }
+
