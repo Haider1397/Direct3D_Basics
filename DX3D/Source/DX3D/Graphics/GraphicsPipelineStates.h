@@ -10,8 +10,9 @@ namespace dx3d
 	public:
 		GraphicsPipelineStates(const GraphicsPipelineStatesDesc& desc ,const GraphicsResourceDesc& gDesc);
 	private:
-		Microsoft::WRL::ComPtr<ID3D11VertexShader> m_vs;
-		Microsoft::WRL::ComPtr<ID3D11PixelShader> m_ps;
+		Microsoft::WRL::ComPtr<ID3D11VertexShader> m_vs{};
+		Microsoft::WRL::ComPtr<ID3D11PixelShader> m_ps{};
+		Microsoft::WRL::ComPtr<ID3D11InputLayout> m_inputLayout{};
 
 		friend class DeviceContext;
 	};

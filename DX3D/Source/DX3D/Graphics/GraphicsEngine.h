@@ -23,7 +23,8 @@ namespace dx3d
 	private:
 		std::shared_ptr<GraphicsDevice> m_graphicsDevice{};
 		DeviceContextPtr m_deviceContext{};
-		GraphicsPipelineStatesPtr m_Pipeline{};
+		GraphicsPipelineStatesPtr m_pipeline{};
+		VertexBufferPtr m_vb{};
 
 	};
 

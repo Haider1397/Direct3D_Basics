@@ -10,7 +10,10 @@ namespace dx3d
 		explicit DeviceContext(const GraphicsResourceDesc& gDesc);
 
 		void clearAndSetBackBuffer(const SwapChain& swapChain, const Vec4& color);
-		void setGraphicsPipelineStates(const GraphicsPipelineStates& Pipeline);
+		void setGraphicsPipelineStates(const GraphicsPipelineStates& pipeline);
+		void setVertexBuffer(const VertexBuffer& buffer);
+		void setViewPortSize(const Rect& size);
+		void drawTriangleList(ui32 vertexCount ,  ui32 startVertexLocation);
 
 	private:
 		Microsoft::WRL::ComPtr<ID3D11DeviceContext> m_context{};

@@ -3,7 +3,8 @@
 
 
 dx3d::SwapChain::SwapChain(const SwapChainDesc Desc, const GraphicsResourceDesc& gDesc):
-	GraphicsResource(gDesc)
+	GraphicsResource(gDesc),
+	m_size(Desc.winSize)
 {
 	if (!Desc.winHandle) DX3DLogThrowInvalidArg("No Window Handle Argument Provided.");
 	DXGI_SWAP_CHAIN_DESC dxgiDesc{};
@@ -24,6 +25,11 @@ dx3d::SwapChain::SwapChain(const SwapChainDesc Desc, const GraphicsResourceDesc&
 
 
 	reloadBuffers();
+}
+
+dx3d::Rect dx3d::SwapChain::getSize() const noexcept
+{
+	return m_size;
 }
 
 void dx3d::SwapChain::present(bool Sync)

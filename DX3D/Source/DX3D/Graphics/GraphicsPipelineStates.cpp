@@ -15,6 +15,13 @@ dx3d::GraphicsPipelineStates::GraphicsPipelineStates(const GraphicsPipelineState
 	auto vs = desc.vs.getData();
 	auto ps = desc.ps.getData();
 
+	constexpr D3D11_INPUT_ELEMENT_DESC elements[] = 
+	{
+		{"POSITION", 0 , DXGI_FORMAT_R32G32B32_FLOAT , 0 , 0 , D3D11_INPUT_PER_VERTEX_DATA, 0}
+	};
+	DX3DGraphicsLogThrowOnFail(m_device.CreateInputLayout(elements , std::size(elements), vs.data , vs.dataSize,&m_inputLayout),
+		"CreateInputLayout failed.");
+
 	DX3DGraphicsLogThrowOnFail(m_device.CreateVertexShader(vs.data,vs.dataSize,nullptr,&m_vs),
 		"CreateVertexShader failed.");
 

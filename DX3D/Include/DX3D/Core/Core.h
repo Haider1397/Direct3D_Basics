@@ -15,6 +15,7 @@ namespace dx3d
 	class GraphicsDevice;
 	class SwapChain;
 	class GraphicsPipelineStates;
+	class VertexBuffer;
 
 	using i32 = int;
 	using ui32 = unsigned int;
@@ -27,4 +28,5 @@ namespace dx3d
 	using DeviceContextPtr = std::shared_ptr<DeviceContext>;
 	using ShaderBinaryPtr = std::shared_ptr<ShaderBinary>;
 	using GraphicsPipelineStatesPtr = std::shared_ptr<GraphicsPipelineStates>;
+	using VertexBufferPtr = std::shared_ptr<VertexBuffer>;
 }

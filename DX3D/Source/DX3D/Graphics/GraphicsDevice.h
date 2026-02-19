@@ -17,6 +17,7 @@ namespace dx3d
 		DeviceContextPtr createDeviceContext();
 		ShaderBinaryPtr CompileShader(const ShaderCompileDesc& desc);
 		GraphicsPipelineStatesPtr createGraphicsPipelineStates(const GraphicsPipelineStatesDesc& desc);
+		VertexBufferPtr createVertexBuffer(const VertexBufferDesc& desc);
 
 		void executeCommandList(DeviceContext& context);
 	private:
